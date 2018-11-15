@@ -15,6 +15,21 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
   }
 
+  public toggleTodo(item: ITodo): void {
+    item.done = !item.done;
+  }
+
+  public toggleDescription(item: ITodo): void {
+    item.isDescription = !item.isDescription;
+  }
+
+  public deleteTodo(item: ITodo): void {
+    const index = this.todos.indexOf(item);
+
+    if (index > -1) {
+      this.todos.splice(index, 1);
+    }
+  }
 }
 
 interface ITodo {
