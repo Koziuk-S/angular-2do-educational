@@ -9,9 +9,6 @@ import { NewTodo } from '../shared/classes';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  public title: string;
-  public description: string;
-
   public todos: Array<ITodo>;
 
   constructor() {
@@ -21,10 +18,7 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
   }
 
-  public onSubmit(): void {
-    let newTodo: ITodo;
-
-    newTodo = new NewTodo(this.title, this.description);
+  public onSubmit(newTodo: ITodo): void {
     _todos.push(newTodo);
   }
 
