@@ -1,6 +1,11 @@
-.app-content {
+.new-todo {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.new-todo footer {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .isCompleted {

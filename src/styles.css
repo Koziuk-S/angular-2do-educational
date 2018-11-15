@@ -3,3 +3,7 @@
 .btn-danger:focus {
   box-shadow: none;
 }
+
+textarea {
+  resize: none;
+}

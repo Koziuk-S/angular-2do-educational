@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
+  public title: string;
+  public description: string;
+
   public todos: Array<ITodo>;
 
   constructor() {
@@ -13,6 +16,13 @@ export class ContentComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  public onSubmit(): void {
+    let newTodo: ITodo;
+
+    newTodo = new NewTodo(this.title, this.description);
+    _todos.push(newTodo);
   }
 
   public toggleTodo(item: ITodo): void {
@@ -56,3 +66,13 @@ const _todos: Array<ITodo> = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, nobis.'
   }
 ];
+
+
+class NewTodo implements ITodo {
+  constructor(
+    public title: string,
+    public description: string,
+    public done: boolean = false,
+    public isDescription: boolean = false
+  ) {}
+}
