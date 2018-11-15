@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ITodo } from '../shared/interfaces';
+import { NewTodo } from '../shared/classes';
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -42,13 +45,6 @@ export class ContentComponent implements OnInit {
   }
 }
 
-interface ITodo {
-  done: boolean;
-  title: string;
-  description: string;
-  isDescription: boolean;
-}
-
 const _todos: Array<ITodo> = [
   <ITodo>{
     done: true,
@@ -66,13 +62,3 @@ const _todos: Array<ITodo> = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, nobis.'
   }
 ];
-
-
-class NewTodo implements ITodo {
-  constructor(
-    public title: string,
-    public description: string,
-    public done: boolean = false,
-    public isDescription: boolean = false
-  ) {}
-}
