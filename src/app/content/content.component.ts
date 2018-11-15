@@ -28,15 +28,15 @@ export class ContentComponent implements OnInit {
     _todos.push(newTodo);
   }
 
-  public toggleTodo(item: ITodo): void {
+  public isToggleTodo(item: ITodo): void {
     item.done = !item.done;
   }
 
-  public toggleDescription(item: ITodo): void {
+  public isToggleDescription(item: ITodo): void {
     item.isDescription = !item.isDescription;
   }
 
-  public deleteTodo(item: ITodo): void {
+  public isDeleteTodo(item: ITodo): void {
     const index = this.todos.indexOf(item);
 
     if (index > -1) {
