@@ -20,6 +20,9 @@ export class NewTodoComponent implements OnInit {
 
   public onSubmit(): void {
     this.submitNewTodo.emit(new NewTodo(this.title, this.description));
+
+    this.title = '';
+    this.description = '';
   }
 
 }
