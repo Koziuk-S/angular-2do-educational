@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { ContentComponent } from './content/content.component';
 import { TodosComponent } from './content/todos/todos.component';
 import { NewTodoComponent } from './content/new-todo/new-todo.component';
+import { HighlightDirective } from './shared/directives';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NewTodoComponent } from './content/new-todo/new-todo.component';
     HeaderComponent,
     ContentComponent,
     TodosComponent,
-    NewTodoComponent
+    NewTodoComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

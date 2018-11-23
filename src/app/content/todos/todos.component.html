@@ -7,7 +7,8 @@
            (click)="onToggleTodo(item)">
           {{ item.done ? 'check_box' : 'check_box_outline_blank' }}
         </i>
-        <h5 [ngClass]="{'isCompleted': item.done}">
+        <h5 [ngClass]="{'isCompleted': item.done}"
+            appHighlight="lightgreen">
           {{ item.title }}
         </h5>
       </div>
