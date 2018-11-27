@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ITodo } from '../shared/interfaces';
 import { NewTodo } from '../shared/classes';
+import { FilterBySearchPipe } from '../shared/pipes';
 
 @Component({
   selector: 'app-content',
@@ -10,6 +11,7 @@ import { NewTodo } from '../shared/classes';
 })
 export class ContentComponent implements OnInit {
   public todos: Array<ITodo>;
+  public search: string;
 
   constructor() {
     this.todos = _todos;
@@ -19,7 +21,7 @@ export class ContentComponent implements OnInit {
   }
 
   public onSubmit(newTodo: ITodo): void {
-    _todos.push(newTodo);
+    this.todos.push(newTodo);
   }
 
   public isToggleTodo(item: ITodo): void {
@@ -47,7 +49,7 @@ const _todos: Array<ITodo> = [
   },
   <ITodo>{
     done: false,
-    title: 'Learn SCC',
+    title: 'Learn CSS',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, nobis.'
   },
   <ITodo>{

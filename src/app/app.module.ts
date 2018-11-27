@@ -8,6 +8,7 @@ import { ContentComponent } from './content/content.component';
 import { TodosComponent } from './content/todos/todos.component';
 import { NewTodoComponent } from './content/new-todo/new-todo.component';
 import { HighlightDirective } from './shared/directives';
+import { FilterBySearchPipe } from './shared/pipes';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HighlightDirective } from './shared/directives';
     ContentComponent,
     TodosComponent,
     NewTodoComponent,
-    HighlightDirective
+    HighlightDirective,
+    FilterBySearchPipe
   ],
   imports: [
     BrowserModule,

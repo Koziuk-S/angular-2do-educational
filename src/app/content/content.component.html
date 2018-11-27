@@ -2,7 +2,19 @@
   <app-new-todo (submitNewTodo)="onSubmit($event)">
   </app-new-todo>
 
-  <app-todos [todosList]="todos"
+  <div>
+    <form>
+      <div class="form-group">
+        <input type="text"
+               class="form-control"
+               name="search"
+               placeholder="Search..."
+               [(ngModel)]="search" />
+      </div>
+    </form>
+  </div>
+
+  <app-todos [todosList]="todos | filterBySearch:search"
              (toggleTodo)="isToggleTodo($event)"
              (toggleDescription)="isToggleDescription($event)"
              (deleteTodo)="isDeleteTodo($event)">
