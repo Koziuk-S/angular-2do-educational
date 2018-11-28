@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
-import { NewTodo } from 'src/app/shared/classes';
-import { ITodo } from 'src/app/shared/interfaces';
 import { FormGroup } from '@angular/forms';
+import { NewTodo } from '../../../shared/classes';
+import { ITodo } from '../../../shared/interfaces';
+
 
 @Component({
   selector: 'app-new-todo',

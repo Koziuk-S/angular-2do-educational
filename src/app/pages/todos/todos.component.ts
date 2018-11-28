@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { ITodo } from '../shared/interfaces';
-import { NewTodo } from '../shared/classes';
+import { ITodo } from '../../shared/interfaces';
 
 @Component({
   selector: 'app-todos',

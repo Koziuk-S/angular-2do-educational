@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ITodo } from 'src/app/shared/interfaces';
+import { ITodo } from '../../../shared/interfaces';
 
 @Component({
   selector: 'app-todos-list',
