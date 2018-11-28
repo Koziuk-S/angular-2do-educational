@@ -13,6 +13,8 @@ import { NewTodoComponent } from './pages/todos/new-todo/new-todo.component';
 import { HighlightDirective } from './shared/directives';
 import { FilterBySearchPipe } from './shared/pipes';
 import { AppRoutingModule } from './app-routing.module';
+import { AboutComponent } from './pages/about/about.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { AppRoutingModule } from './app-routing.module';
     NewTodoComponent,
     HighlightDirective,
     FilterBySearchPipe,
-    MainNavComponent
+    MainNavComponent,
+    AboutComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
