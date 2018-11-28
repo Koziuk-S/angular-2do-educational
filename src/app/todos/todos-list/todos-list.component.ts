@@ -2,11 +2,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ITodo } from 'src/app/shared/interfaces';
 
 @Component({
-  selector: 'app-todos',
-  templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.css']
+  selector: 'app-todos-list',
+  templateUrl: './todos-list.component.html',
+  styleUrls: ['./todos-list.component.css']
 })
-export class TodosComponent implements OnInit {
+export class TodosListComponent implements OnInit {
   @Input() todosList: Array<ITodo>;
 
   @Output() toggleTodo: EventEmitter<ITodo> = new EventEmitter();

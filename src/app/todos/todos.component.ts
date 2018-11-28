@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 import { ITodo } from '../shared/interfaces';
 import { NewTodo } from '../shared/classes';
-import { FilterBySearchPipe } from '../shared/pipes';
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  selector: 'app-todos',
+  templateUrl: './todos.component.html',
+  styleUrls: ['./todos.component.css']
 })
-export class ContentComponent implements OnInit {
+export class TodosComponent implements OnInit {
   public todos: Array<ITodo>;
   public search: string;
 

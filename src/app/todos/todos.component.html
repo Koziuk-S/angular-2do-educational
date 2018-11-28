@@ -1,4 +1,4 @@
-<section class="container app-content">
+<section class="container app-todos">
   <app-new-todo (submitNewTodo)="onSubmit($event)">
   </app-new-todo>
 
@@ -14,9 +14,9 @@
     </form>
   </div>
 
-  <app-todos [todosList]="todos | filterBySearch:search"
+  <app-todos-list [todosList]="todos | filterBySearch:search"
              (toggleTodo)="isToggleTodo($event)"
              (toggleDescription)="isToggleDescription($event)"
              (deleteTodo)="isDeleteTodo($event)">
-  </app-todos>
+  </app-todos-list>
 </section>
