@@ -15,6 +15,8 @@ import { FilterBySearchPipe } from './shared/pipes';
 import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './pages/about/about.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AboutProjectComponent } from './pages/about/about-project/about-project.component';
+import { AboutUsComponent } from './pages/about/about-us/about-us.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     FilterBySearchPipe,
     MainNavComponent,
     AboutComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AboutProjectComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

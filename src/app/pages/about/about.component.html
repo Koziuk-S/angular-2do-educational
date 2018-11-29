@@ -1,6 +1,16 @@
-<div class="container">
-  <p>
-    about works!
-  </p>
-</div>
+<section class="app-about">
+  <nav class="about-nav">
+    <ul>
+      <li>
+        <a routerLinkActive="active"
+           routerLink="about-project">about project</a>
+      </li>
+      <li>
+        <a routerLinkActive="active"
+           routerLink="about-us">about us</a>
+      </li>
+    </ul>
+  </nav>
 
+  <router-outlet></router-outlet>
+</section>

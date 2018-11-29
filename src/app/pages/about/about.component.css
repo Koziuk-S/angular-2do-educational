@@ -1,0 +1,33 @@
+.app-about {
+  position: relative;
+  padding-left: 200px;
+}
+
+.about-nav {
+  position: fixed;
+  left: 0;
+  width: 200px;
+  height: 100%;
+      border-right: 1px solid #dadada;
+}
+
+.about-nav ul {
+  margin: 0px;
+  padding: 10px 10px;
+}
+
+.about-nav a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: rgba(0,0,0,.5);
+  text-transform: capitalize;
+}
+
+.about-nav a:hover {
+  color: rgba(0,0,0,.75);
+}
+
+.about-nav a.active {
+  color: rgba(0,0,0,1);
+}
