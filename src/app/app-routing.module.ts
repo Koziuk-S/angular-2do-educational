@@ -5,6 +5,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AboutProjectComponent } from './pages/about/about-project/about-project.component';
 import { AboutUsComponent } from './pages/about/about-us/about-us.component';
+import { UserComponent } from './pages/about/user/user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'todos', pathMatch: 'full', },
@@ -13,7 +14,8 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'about-project', pathMatch: 'full', },
       { path: 'about-project', component: AboutProjectComponent },
-      { path: 'about-us', component: AboutUsComponent }
+      { path: 'about-us', component: AboutUsComponent },
+      { path: 'about-us/:user', component: UserComponent }
     ]
   },
   { path: '**', component: NotFoundComponent },
