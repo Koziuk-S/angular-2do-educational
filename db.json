@@ -1,0 +1,23 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "done": true,
+      "title": "Learn CSS",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, nobis."
+    },
+    {
+      "id": 2,
+      "done": true,
+      "title": "Learn JS",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, nobis."
+    },
+    {
+      "title": "JS proto",
+      "description": "scscscs",
+      "id": 4,
+      "done": false,
+      "isDescription": false
+    }
+  ]
+}

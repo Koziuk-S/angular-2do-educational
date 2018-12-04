@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ITodo } from '../../shared/interfaces';
+import { TodoService } from 'src/app/shared/services';
 
 @Component({
   selector: 'app-todos',
@@ -10,19 +11,43 @@ export class TodosComponent implements OnInit {
   public todos: Array<ITodo>;
   public search: string;
 
-  constructor() {
-    this.todos = _todos;
+  constructor(
+    private todoService: TodoService
+  ) {
+    this.todos = [];
   }
 
   ngOnInit() {
+    this.getTodo();
+  }
+
+  private getTodo(): void {
+    this.todoService.getTodo().subscribe(
+      data => {
+        console.log(data);
+        this.todos = data;
+      },
+      err => {
+        console.error(err);
+      }
+    );
   }
 
   public onSubmit(newTodo: ITodo): void {
-    this.todos.push(newTodo);
+    newTodo.id = this.todos.slice(-1)[0].id + 1;
+
+    this.todoService.addTodo(newTodo).subscribe(() => {
+      this.getTodo();
+    });
   }
 
   public isToggleTodo(item: ITodo): void {
     item.done = !item.done;
+
+    this.todoService.updateTodo(item).subscribe(() => {
+        this.getTodo();
+      }
+    );
   }
 
   public isToggleDescription(item: ITodo): void {
@@ -30,28 +55,9 @@ export class TodosComponent implements OnInit {
   }
 
   public isDeleteTodo(item: ITodo): void {
-    const index = this.todos.indexOf(item);
-
-    if (index > -1) {
-      this.todos.splice(index, 1);
-    }
+    this.todoService.delTodo(item.id).subscribe(() => {
+        this.getTodo();
+      }
+    );
   }
 }
-
-const _todos: Array<ITodo> = [
-  <ITodo>{
-    done: true,
-    title: 'Learn HTML',
-    description: ''
-  },
-  <ITodo>{
-    done: false,
-    title: 'Learn CSS',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, nobis.'
-  },
-  <ITodo>{
-    done: false,
-    title: 'Learn JS',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, nobis.'
-  }
-];
