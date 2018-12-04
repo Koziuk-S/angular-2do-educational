@@ -20,6 +20,10 @@
           {{ item.isDescription ? 'hide' : 'show' }} deteils
         </button>
 
+        <button type="button"
+                class="btn btn-primary"
+                (click)="onEditTodo(item)">Edit Todo</button>
+
         <button class="btn btn-danger"
                 (click)="onDeleteTodo(item)">
           del

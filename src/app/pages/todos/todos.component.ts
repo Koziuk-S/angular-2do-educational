@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ITodo } from '../../shared/interfaces';
 import { TodoService } from 'src/app/shared/services';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-todos',
@@ -10,9 +11,13 @@ import { TodoService } from 'src/app/shared/services';
 export class TodosComponent implements OnInit {
   public todos: Array<ITodo>;
   public search: string;
+  private modalRef: BsModalRef;
+
+  @ViewChild('editTodoModal') editTodoModal: ElementRef;
 
   constructor(
-    private todoService: TodoService
+    private todoService: TodoService,
+    private modalService: BsModalService
   ) {
     this.todos = [];
   }
@@ -45,8 +50,8 @@ export class TodosComponent implements OnInit {
     item.done = !item.done;
 
     this.todoService.updateTodo(item).subscribe(() => {
-        this.getTodo();
-      }
+      this.getTodo();
+    }
     );
   }
 
@@ -56,8 +61,23 @@ export class TodosComponent implements OnInit {
 
   public isDeleteTodo(item: ITodo): void {
     this.todoService.delTodo(item.id).subscribe(() => {
-        this.getTodo();
-      }
+      this.getTodo();
+    }
     );
+  }
+
+  public isEditTodo(item: ITodo): void {
+    this.modalRef = this.modalService.show(this.editTodoModal, {
+      class: 'modal-dialog-centered app-modal',
+      ignoreBackdropClick: true
+    });
+  }
+
+  public cancel(): void {
+    this.modalRef.hide();
+  }
+
+  public save(): void {
+    this.modalRef.hide();
   }
 }

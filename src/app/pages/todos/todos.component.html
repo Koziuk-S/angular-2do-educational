@@ -15,8 +15,28 @@
   </div>
 
   <app-todos-list [todosList]="todos | filterBySearch:search"
-             (toggleTodo)="isToggleTodo($event)"
-             (toggleDescription)="isToggleDescription($event)"
-             (deleteTodo)="isDeleteTodo($event)">
+                  (toggleTodo)="isToggleTodo($event)"
+                  (toggleDescription)="isToggleDescription($event)"
+                  (deleteTodo)="isDeleteTodo($event)"
+                  (editTodo)="isEditTodo($event)">
   </app-todos-list>
 </section>
+
+<ng-template #editTodoModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Edit todo</h4>
+  </div>
+
+  <div class="modal-body">
+    Modal body
+  </div>
+
+  <footer>
+    <button type="button"
+            class="btn btn-outline-secondary"
+            (click)="cancel()">Cancel</button>
+    <button type="button"
+            class="btn btn-success"
+            (click)="save()">Save</button>
+  </footer>
+</ng-template>
